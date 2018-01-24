@@ -13,10 +13,10 @@ The GitHub REST API requires a personal access token:
 ## Scripts
 ### `list_repos.sh`: List repositories within an organization
 ```bash
-GITHUB_ORG="&lt;GitHub user/org you want to search&gt;" GITHUB_API_USER="&lt;your GitHub username&gt;" GITHUB_API_KEY="&lt;personal access token&gt;" ./list_repos.sh
+GITHUB_ORG="<GitHub user or org you want to search>" GITHUB_API_USER="<your GitHub username>" GITHUB_API_KEY="<personal access token>" ./list_repos.sh
 ```
 
-### `./query_all_repos.sh`: Perform a search query on all repositories within an organization
+### `query_all_repos.sh`: Perform a search query on all repositories within an organization
 ```bash
-GITHUB_ORG="&lt;GitHub user/org you want to search&gt;" GITHUB_API_USER="&lt;your GitHub username&gt;" GITHUB_API_KEY="&lt;personal access token&gt;" ./query_all_repos.sh "&lt;search query string&gt;"
+GITHUB_ORG="<GitHub user/org you want to search>" GITHUB_API_USER="<your GitHub username>" GITHUB_API_KEY="<personal access token>" ./query_all_repos.sh "<search query string>"
 ```
