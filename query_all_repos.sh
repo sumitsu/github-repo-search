@@ -52,7 +52,7 @@ do
         then
             REPO_COUNT="$((REPO_COUNT + PAGE_COUNT))";
         fi;
-        jq --raw-output '.items[] | "[PATH] \(.path) | [URL] \(.html_url)"' "${CURL_OUTPUT}";
+        jq --raw-output '.items[]? | "[PATH] \(.path) | [URL] \(.html_url)"' "${CURL_OUTPUT}";
         RL_REMAINING=`cat "${CURL_HEADERS}" | sed -E -n 's#^X-RateLimit-Remaining[^0-9]*([0-9]+).*#\1#p'`;
         if ! [ "${RL_REMAINING}" -gt "0" ]
         then

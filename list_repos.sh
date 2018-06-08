@@ -33,6 +33,6 @@ GITHUBURL="https://api.github.com/orgs/${GITHUB_ORG}/repos?type=all";
 while [ -n "${GITHUBURL}" ]
 do
     curl --dump-header "${CURL_HEADERS}" --output "${CURL_OUTPUT}" --silent --basic --user "${GITHUB_API_USER}:${GITHUB_API_KEY}" "${GITHUBURL}";
-    cat "${CURL_OUTPUT}" | jq --raw-output '.[].full_name';
+    cat "${CURL_OUTPUT}" | jq --raw-output '.[]?.full_name';
     GITHUBURL=`cat "${CURL_HEADERS}" | sed -E -n 's#^Link:.*[<]([^>]+)[>]; rel=["]next["].*#\1#p' | head -1`;
 done;
